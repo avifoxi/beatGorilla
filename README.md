@@ -119,10 +119,13 @@ you want to do something fancy, try using [d3.js][].  This is very advanced. But
 
 ####Front End
 
-
 * Design 
-* Front End JS MVC + OOJS - Angular ? 
+* Visualize The UI with [Web Audio Controls]
+* Front will need serious structure and MVC. Might  a front end framework like Angular be useful? Do we roll our own out of JS + jQuery? 
+
+####Back End
 * External API(s) ? - Can a Sequence Creator add their own recorded sounds to a Sequence? We would need a way to store this file if the answer is yes - but we don't want to create that functionality because someone is already doing it better than we ever could. How can we use the tools that [SoundCloud][] makes available in its [SoundCloud API][]? 
+* Can an external API also handle authentication?
 
 
 
