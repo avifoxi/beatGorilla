@@ -3,9 +3,10 @@
 ## Learning Competencies
 
 * Use form controls to pass data into a server application
-* Use the MVC pattern in web applications with proper allocation of code and responsibilities to each layer
+* Use the MVC pattern in web applications with proper allocation of code and responsibilities to each layer.
 * Implement CRUD in an MVC application
 * Use pure JS and jQuery
+* Explore the [Web Audio API]
 
 ## Summary
 
@@ -14,10 +15,10 @@ It lets users create their own drum Sequences that will be played back in the br
 
 Sequences are repeating musical structures, comprised of a specific number of Steps, occuring at specific intervals(tempo). 
 
-The Sequence starts and plays one by one throught its Steps. When the last Step is reached, the Sequence cycles back and begins again. If no one ever stops the Sequence - it will never stop! 
-Sounds like a 'while' loop - no?
+The Sequence starts and plays one by one through its Steps. When the last Step is reached, the Sequence cycles back and begins again. If no one ever stops the Sequence - it will never stop! 
+Holy While Loop Bat Man!!!
 
-Sequence playback will use a combination of pure JavaScript and AJAX to achieve the desired effects. Sounds are selected then retrieved from the server via Ajax. Playback uses pure JS. 
+Sequence playback will use a combination of pure JavaScript and AJAX to achieve the desired effects. Sounds are selected then retrieved from the server via Ajax. Playback uses pure JS to control the Web Audio API. 
 
 A Sequence is comprised of many Sounds. 
 A Sequence has a set number of Steps in its looping structure. And it has a set tempo. 
@@ -26,6 +27,15 @@ Sounds may be generated in 2 ways: they may be played from an existing Resource 
 
 A Sound may either play (trigger) on a Step, or not. 
 A Sound may last the duration of 1 Step - or extend for several Steps. 
+
+#####Disclaimer!
+To do this project well - at least one person in your group will need to spike on The Web Audio API. 
+[With this book.](http://chimera.labs.oreilly.com/books/1234000001552)
+[And these docs.](http://webaudio.github.io/web-audio-api/)
+[And this article.](http://www.html5rocks.com/en/tutorials/webaudio/intro/)
+Luckily Avi is already doing this a lot, and is totally willing to share as much(little) as he knows.
+BUT -- this project is pretty ambitious. If you are mostly focused on nailing down your associations and routes for the assessments, form building, and user authentication - that is ALSO intrinsic to this challenge. And if the team handles the workload well - everyone should be able to focus on the areas they feel they need to.
+
 
 ## Releases
 
@@ -38,8 +48,7 @@ This project will demand BOTH an involved Front End and and involved Back End. W
 
 Create a solid set of wireframes of the pages/ states of pages of your application.  Use a tool like [Balsamiq][balsamiq] or sketch them on paper.
 
-Discuss what your core pages are and what your core user flows are.  There should be two core flows: loop creation and loop playback.
-Also - standard User Authentication routes, and profile display, etc.
+Discuss what your core pages are and what your core user flows are.
 
 #### User Stories
 Create a solid set of user stories for your application.  Use your wireframes to guide stories (ie what happens when a user clicks here?).
@@ -78,16 +87,15 @@ Make sure your models support all of your user stories.
 ### Release 2: Sequence Creation
 
 Users will want to create their sequences on one page.
-Users add a sound to the template, and select which step of the sequence triggers the sound.  
-This is an opportunity to create some fun dynamic forms.  Check these out:
+Users add a sound to the template, and select which step of the sequence triggers the sound. 
+This will most easily can be represented in a table, containing toggles for Check these out:
 
-* [Adding Form Fields Dynamically with jQuery][]
 * [Dynamically Add Input Fields To Form Using jQuery][]
 * Google "jquery dynamic form fields" to find more
 
 
 To start and for your own sanity, maybe each sequence starts with a preset number and type of sounds, and preset steps. Create a version using 4 sounds that are samples, and 8 steps. 
-Build out from there.
+Build out from there adding user expressiveness.
 
 ### Release 3: SEQUENCE CREATING 
 
@@ -100,51 +108,38 @@ what functionality does a user need BEFORE saving a sequence to the server?
 looks like ? sounds like ?
 relies on mvc js structure 
 
-[Boris Smus' Web Audio API Book][]
-[Web Audio API][]
+* [Boris Smus' Web Audio API Book][]
+* [Web Audio API][]
+* [Web Audio Controls] For an intuitive UI. 
 
-Create a nice page that shows a Sequence walking Stepwise through its steps.  If
+Create a page that shows a Sequence moving stepwise through its Steps.  If
 you want to do something fancy, try using [d3.js][].  This is very advanced. But maybe you like this stuff.
-
-There are other charting libraries like [Flot][] or [Highcharts][].
-
-At the very least, create some simple HTML bar charts by having
-percentage-width divs with a fixed height and solid background color so that we
-can see how people responded for each question in a particular survey.
 
 ### Release 5: Advanced Features
 
 ####Front End
+
 
 * Design 
 * Front End JS MVC + OOJS - Angular ? 
 * External API(s) ? - Can a Sequence Creator add their own recorded sounds to a Sequence? We would need a way to store this file if the answer is yes - but we don't want to create that functionality because someone is already doing it better than we ever could. How can we use the tools that [SoundCloud][] makes available in its [SoundCloud API][]? 
 
 
-If you're looking for more advanced features, how about something that lets a
-user view a survey without logging in but pops up a [modal dialog][] to prompt
-a user to sign in/sign up right before they vote?
 
-How about more advanced visualizations, like time series?
-
-How about focusing on making the user interface really nice?
-
-How about multiple question types?
 
 <!-- ## Optimize Your Learning -->
 
 ## Resources
 
-* [CarrierWave][]
-* [Adding Form Fields Dynamically with jQuery][]
 * [Dynamically Add Input Fields To Form Using jQuery][]
 * [d3.js][]
 * [Flot][]
 * [Highcharts][]
 * [modal dialog][]
 
-[Balsamiq]: http://balsamiq.com
-[CarrierWave]: https://github.com/jnicklas/carrierwave
+[Boris Smus' Web Audio API Book]: http://chimera.labs.oreilly.com/books/1234000001552
+[Web Audio API]: http://webaudio.github.io/web-audio-api/
+[Web Audio Controls]: https://github.com/cwilso/webaudio-controls
 [Adding Form Fields Dynamically with jQuery]: http://www.mustbebuilt.co.uk/2012/07/27/adding-form-fields-dynamically-with-jquery/
 [Dynamically Add Input Fields To Form Using jQuery]: http://www.infotuts.com/dynamically-add-input-fields-to-form-jquery/
 [d3.js]: http://d3js.org/)
@@ -153,5 +148,4 @@ How about multiple question types?
 [modal dialog]: http://www.ericmmartin.com/projects/simplemodal/
 [SoundCloud]: https://soundcloud.com/
 [SoundCloud API]: https://developers.soundcloud.com/
-[Boris Smus' Web Audio API Book]: http://chimera.labs.oreilly.com/books/1234000001552
-[Web Audio API]: http://webaudio.github.io/web-audio-api/
+
