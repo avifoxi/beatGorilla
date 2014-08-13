@@ -77,21 +77,17 @@ Make sure your models support all of your user stories.
 
 ### Release 2: Sequence Creation
 
-Users will want to create their sequences in "one go" by adding multiple
-sounds and triggers on a single page.  This is an opportunity to
-create some fun dynamic forms.  Check these out:
+Users will want to create their sequences on one page.
+Users add a sound to the template, and select which step of the sequence triggers the sound.  
+This is an opportunity to create some fun dynamic forms.  Check these out:
 
 * [Adding Form Fields Dynamically with jQuery][]
 * [Dynamically Add Input Fields To Form Using jQuery][]
 * Google "jquery dynamic form fields" to find more
 
 
-To start and for your own sanity, maybe limit each survey to a single question.
-Create a version with a single question per survey working first and add
-support for multiple questions later.
-
-Surveys should also have an optional image associated with them.
-[CarrierWave][CarrierWave] is your friend; you'll come to love it with time.
+To start and for your own sanity, maybe each sequence starts with a preset number and type of sounds, and preset steps. Create a version using 4 sounds that are samples, and 8 steps. 
+Build out from there.
 
 ### Release 3: SEQUENCE CREATING 
 
