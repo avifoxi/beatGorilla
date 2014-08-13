@@ -75,10 +75,10 @@ Can users upvote sequences?
 
 Make sure your models support all of your user stories. 
 
-### Release 2: Survey Creation
+### Release 2: Sequence Creation
 
-Users will want to create their surveys in "one go" by adding multiple
-questions and choices per question on a single page.  This is an opportunity to
+Users will want to create their sequences in "one go" by adding multiple
+sounds and triggers on a single page.  This is an opportunity to
 create some fun dynamic forms.  Check these out:
 
 * [Adding Form Fields Dynamically with jQuery][]
