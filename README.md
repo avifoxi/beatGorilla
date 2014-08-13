@@ -140,6 +140,15 @@ you want to do something fancy, try using [d3.js][].  This is very advanced. But
 * [Highcharts][]
 * [modal dialog][]
 
+## Audio Specific
+* [Boris Smus' Web Audio API Book]
+* [Web Audio API]
+* [Web Audio Playground App]
+* [Violent Theremin!]
+* [Intro to Audio Scheduling]
+* [Where the cool kids hang out]
+
+
 [Boris Smus' Web Audio API Book]: http://chimera.labs.oreilly.com/books/1234000001552
 [Web Audio API]: http://webaudio.github.io/web-audio-api/
 [Web Audio Controls]: https://github.com/cwilso/webaudio-controls
@@ -151,4 +160,8 @@ you want to do something fancy, try using [d3.js][].  This is very advanced. But
 [modal dialog]: http://www.ericmmartin.com/projects/simplemodal/
 [SoundCloud]: https://soundcloud.com/
 [SoundCloud API]: https://developers.soundcloud.com/
-
+[Web Audio Playground App]: http://webaudioplayground.appspot.com/
+[Violent Theremin!]: https://github.com/mdn/violent-theremin
+[Intro to Audio Scheduling]: http://www.html5rocks.com/en/tutorials/audio/scheduling/
+[Where the cool kids hang out]: http://webaudioapi.com/
+[Pattern Sketch Drum Machine]: http://patternsketch.com/
