@@ -1,0 +1,29 @@
+<nav id=:"nav">
+
+  <% if session[:user_id] %>
+    <form action="/logout" method="POST">
+     <input type="submit" value="Logout">
+    </form>
+    <a href="users/:id">Your Profile</a>
+  <% else %>
+    <a href="/login" id="loginButton">Login</a>
+    <a href="/users/new" id="signupButton">Register</a>
+  <% end %>
+
+  <a href="/sequence">New Sequence</a>
+
+<!-- HIDDEN FORMS -->
+  <form class="hidden" id="loginForm" action="/login" method="POST">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Login">
+  </form>
+
+  <form class="hidden" id="signupForm" action="/users/new" method="POST">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Register">
+  </form>
+
+</nav>
