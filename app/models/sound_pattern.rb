@@ -1,3 +1,6 @@
 class SoundPattern < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :sequence
+  has_many :beats
+  has_one :sound
+
 end
