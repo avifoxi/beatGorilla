@@ -7,13 +7,14 @@
   <h1>Sequence by <%= @user.name %>!</h1>
 
   <form action='/ui/<%= @sequence.id %>/save' method="post">
+    <input type="hidden" name="_method" value="put" />
     <table>
       <% @soundpatterns.each do |sp| %>
         <tr class="<%= sp.sound.name %>">
           <td><%= sp.sound.name %></td>
 
           <% sp.beats.each do |beat| %>
-            <td class="<%= beat.position %>"><input type="checkbox" name="<%= sp.id %>" value="<%= beat.id %>" <% if beat.play == true %>checked<% end %>></td>
+            <td class="<%= beat.position %>"><input type="checkbox" name="<%= sp.sound.id %>[]" value="<%= beat.id %>" <% if beat.play == true %>checked<% end %>></td>
           <% end %>
 
         </tr>
@@ -21,7 +22,6 @@
     </table>
 
     <br><br>
-
     <input type="submit" value="Save Sequence">
   </form>
 
