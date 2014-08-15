@@ -1,3 +1,3 @@
 class Sound < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :sound_pattern
 end

@@ -1,3 +1,4 @@
 class Sequence < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :sound_patterns
+  belongs_to :user
 end
