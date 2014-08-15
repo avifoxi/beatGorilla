@@ -5,9 +5,15 @@ function Controller(model, view) {
   this._view = view;
   var _this = this;
 
+  var beatCount = 0;
+
   this._view.buttonClicked.attach( function() {
     _this.playSound();
   });
+
+  this._model._metronome.beatDropped.attach( function() {
+    console.log(beatCount += 1)
+  })
 }
 
 Controller.prototype = {

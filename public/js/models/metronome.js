@@ -22,16 +22,16 @@ var notesInQueue = [];      // the notes that have been put into the web audio,
                             // and may or may not have played yet. {note, time}
 
 // First, let's shim the requestAnimationFrame API, with a setTimeout fallback
-window.requestAnimFrame = (function(){
-    return  window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.oRequestAnimationFrame ||
-    window.msRequestAnimationFrame ||
-    function( callback ){
-        window.setTimeout(callback, 1000 / 60);
-    };
-})();
+// window.requestAnimFrame = (function(){
+//     return  window.requestAnimationFrame ||
+//     window.webkitRequestAnimationFrame ||
+//     window.mozRequestAnimationFrame ||
+//     window.oRequestAnimationFrame ||
+//     window.msRequestAnimationFrame ||
+//     function( callback ){
+//         window.setTimeout(callback, 1000 / 60);
+//     };
+// })();
 
 function nextNote() {
     // Advance current note and time by a 16th note...
@@ -39,10 +39,10 @@ function nextNote() {
                                           // tempo value to calculate beat length.
     nextNoteTime += 0.25 * secondsPerBeat;    // Add beat length to last beat time
 
-    current16thNote++;    // Advance the beat number, wrap to zero
-    if (current16thNote == 16) {
-        current16thNote = 0;
-    }
+    // current16thNote++;    // Advance the beat number, wrap to zero
+    // if (current16thNote == 16) {
+    //     current16thNote = 0;
+    // }
 }
 
 function scheduleNote( beatNumber, time ) {
@@ -54,18 +54,20 @@ function scheduleNote( beatNumber, time ) {
     if ( (noteResolution==2) && (beatNumber%4))
         return; // we're not playing non-quarter 8th notes
 
-    // create an oscillator
-    var osc = audioContext.createOscillator();
-    osc.connect( audioContext.destination );
-    if (beatNumber % 16 === 0)    // beat 0 == low pitch
-        osc.frequency.value = 880.0;
-    else if (beatNumber % 4 === 0 )    // quarter notes = medium pitch
-        osc.frequency.value = 440.0;
-    else                        // other 16th notes = high pitch
-        osc.frequency.value = 220.0;
+    //no oscillation, we will trigger our own sound for testing
 
-    osc.start( time );
-    osc.stop( time + noteLength );
+    // create an oscillator
+    // var osc = audioContext.createOscillator();
+    // osc.connect( audioContext.destination );
+    // if (beatNumber % 16 === 0)    // beat 0 == low pitch
+    //     osc.frequency.value = 880.0;
+    // else if (beatNumber % 4 === 0 )    // quarter notes = medium pitch
+    //     osc.frequency.value = 440.0;
+    // else                        // other 16th notes = high pitch
+    //     osc.frequency.value = 220.0;
+
+    // osc.start( time );
+    // osc.stop( time + noteLength );
 }
 
 function scheduler() {
