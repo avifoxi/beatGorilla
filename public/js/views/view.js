@@ -13,4 +13,12 @@ function View(model, elements) {
   // this._elements.button.onclick = function(){
   //     _this.buttonClicked.notify();
   // }
+
+  //  HI GUYS! we are passing the newBeat function in here - it recieves a notification at each beat of the metronome. on YOUR end - setup an Event (see above and check Event class), where newBeat triggers a sender in the view, and gets a bunch of listeners that respond. I can explain
+}
+
+View.prototype = {
+  newBeat : function() {
+    console.log('wake up view, its beat time!');
+  }
 }

@@ -27,7 +27,7 @@ Metronome.prototype = {
 
         var _this = this;
         var internalTempo = this._tempoBpm;
-        console.log(internalTempo);
+
         window.setTimeout( function(){
             _this.dropBeat();
             if (_this._isPlaying === true) {

@@ -12,7 +12,8 @@ function Controller(model, view) {
   });
 
   this._model._metronome.beatDropped.attach( function() {
-    console.log(beatCount += 1)
+    // console.log(beatCount += 1)
+    _this._view.newBeat();
   })
 }
 
