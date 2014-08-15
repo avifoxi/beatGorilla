@@ -5,14 +5,16 @@ $(document).ready(function() {
 
     var num_soundpatterns = $('tr').length;
     var num_beats_per_soundpattern = $('td').length / num_soundpatterns;
-    var id=1;
+
+    // start at 2 because sound name is in position 1
+    var beat_position=2;
 
 
     function highlightColumn() {
         $('td').css("background", "white");
-        $('td:nth-child(' + id + ')').css("background", "yellow");
-        id += 1;
-        if (id > 8) { id = 1; };
+        $('td:nth-child(' + beat_position + ')').css("background", "yellow");
+        beat_position += 1;
+        if (beat_position > num_beats_per_soundpattern) { beat_position = 2; };
     }
 
 
