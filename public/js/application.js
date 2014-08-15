@@ -1,7 +1,15 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+/// AND ON DOCUMENT READY PUT IT ALL TOGETHER
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+// document.addEventListener('DOMContentLoaded', function(){
+  console.log('hello from application.js!')
+
+    // first the model
+  var model = new Model(new AudioContext() );
+
+  var button = document.getElementsByTagName('button')[0];
+  var view = new View(model, { 'button' : button });
+
+  var controller = new Controller(model, view);
+  // controller.prepareSample("/samples/Kit/CyCdh_K3Crash-07.wav");
+  console.log(controller);
+// });
