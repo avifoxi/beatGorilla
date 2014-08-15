@@ -1,4 +1,7 @@
-eddie = User.create(name: "Eddie", email: "eddiekimosabe@gmail.com", password: "test123")
+eddie = User.new(name: "Eddie", email: "eddiekimosabe@gmail.com")
+eddie.password = "test123"
+eddie.save
+
 seq_one = Sequence.create(name: "sequence1", tempo: 120, steps: 8, user_id: eddie.id)
 
 sounds = %w(snare kick cymbal tom)
