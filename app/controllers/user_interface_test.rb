@@ -14,6 +14,6 @@ end
 
 post '/ui/:id/save' do
   #create or save by sequence code
-  p "SAVED!!!"
+  p params
   redirect "/ui/#{params[:id]}"
 end
