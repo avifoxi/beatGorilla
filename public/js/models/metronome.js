@@ -4,7 +4,7 @@ console.log('hello from Metronome!')
 
 function Metronome(context, tempoBpm) {
     this._context = context;
-    this._tempoBpm = 500;
+    this._tempoBpm = tempoBpm;
     this._isPlaying = false;
 
     this.beatDropped = new Event(this);
@@ -27,13 +27,14 @@ Metronome.prototype = {
 
         var _this = this;
         var internalTempo = this._tempoBpm;
-        console.log(internalTempo);
-        // window.setTimeout( function(){
-        //     _this.dropBeat();
-        // }, internalTempo);
-        // if (this._isPlaying === true) {
-        //     _this.startPlay(this._tempoBpm);
-        // }
+
+        window.setTimeout( function(){
+            _this.dropBeat();
+            if (_this._isPlaying === true) {
+                _this.startPlay(this._tempoBpm);
+            }
+        }, internalTempo);
+
     }
 }
 
