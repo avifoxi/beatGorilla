@@ -5,6 +5,7 @@ console.log('hello from Model!')
 function Model(context) {
   this._context = context;
   this._decodedBuffers = [];
+  // this._metronome = new Metronome( this._context )
 }
 
 Model.prototype = {
