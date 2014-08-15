@@ -10,7 +10,7 @@ function View(model, elements) {
 
   // attach listener to button
 
-  this._elements.button.onclick = function(){
-      _this.buttonClicked.notify();
-  }
+  // this._elements.button.onclick = function(){
+  //     _this.buttonClicked.notify();
+  // }
 }

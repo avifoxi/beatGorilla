@@ -2,10 +2,10 @@
 console.log('hello from Model!')
 
 
-function Model(context) {
+function Model(context, tempo) {
   this._context = context;
   this._decodedBuffers = [];
-  // this._metronome = new Metronome( this._context )
+  this._metronome = new Metronome( this._context, tempo);
 }
 
 Model.prototype = {
