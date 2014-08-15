@@ -1,5 +1,14 @@
 # Beat Gorilla
 
+## Avi's previous Web Audio Repo + JS links 
+
+[Drum Machine 0.1](https://github.com/avifoxi/web-audio-101/blob/master/public/js/grid1.js)
+
+[full web audio repo](https://github.com/avifoxi/web-audio-101)
+
+
+
+
 ## Learning Competencies
 
 * Use form controls to pass data into a server application
@@ -7,6 +16,10 @@
 * Implement CRUD in an MVC application
 * Use pure JS and jQuery
 * Explore the [Web Audio API]
+
+
+
+
 
 ## Summary
 
