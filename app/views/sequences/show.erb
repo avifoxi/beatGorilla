@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/css/user_interface.css">
+
+<script src="/js/user_interface_development.js"></script>
+
+<div class="container">
+
+  <h1>Sequence by <%= @user.name %>!</h1>
+
+  <form action='/ui/<%= @sequence.id %>/save' method="post">
+    <table>
+      <% @soundpatterns.each do |sp| %>
+        <tr class="<%= sp.sound.name %>">
+          <td><%= sp.sound.name %></td>
+
+          <% sp.beats.each do |beat| %>
+            <td class="<%= beat.position %>"><input type="checkbox" name="<%= sp.id %>" value="<%= beat.id %>" <% if beat.play == true %>checked<% end %>></td>
+          <% end %>
+
+        </tr>
+      <% end %>
+    </table>
+
+    <br><br>
+
+    <input type="submit" value="Save Sequence">
+  </form>
+
+  <button id="play_button">Play!</button>
+
+
+
+
+
+</div>
