@@ -11,8 +11,8 @@
       <% @soundpatterns.each do |sp| %>
         <tr class="<%= sp.sound.name %>">
 
-          <% sp.beats.each do |pos| %>
-            <td class="<%= pos.position %>"><input type="checkbox" name=" <%= sp %> " value="<%= pos %>"></td>
+          <% sp.beats.each do |beat| %>
+            <td class="<%= beat.position %>"><input type="checkbox" name=" <%= sp %> " value="<%= beat %>" <% if beat.play == true %>checked<% end %>></td>
           <% end %>
 
         </tr>
@@ -25,6 +25,7 @@
   </form>
 
   <button id="play_button">Play!</button>
+
 
 
 
