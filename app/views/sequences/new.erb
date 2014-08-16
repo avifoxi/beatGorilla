@@ -12,10 +12,10 @@
   <form action='/ui/create' id='create' method="post">
     <input type="text" name="seq_name" placeholder="name your sequence">
     <table>
-      <% @drums.each do |drum| %>
+      <% @sounds.each_with_index do |sound, i| %>
         <tr>
           <td>
-            <select name="drum_<%= drum %>" form='create'>
+            <select name="sp<%= i + 1%>[id]" form='create'>
               <% @sounds.each do |sound| %>
                <option value="<%= sound.id %>"><%= sound.name %></option>
               <% end %>
@@ -23,7 +23,7 @@
         </td>
 
           <% @beats.each do |beat| %>
-            <td><input type="checkbox" name="beat_<%= beat %>" value="<%= beat %>"></td>
+            <td><input type="checkbox" name="sp<%= i + 1%>[beat_<%= beat %>]" value="<%= beat %>"></td>
           <% end %>
 
         </tr>
@@ -31,7 +31,7 @@
     </table>
 
     <br><br>
-
+    <input type="hidden" name = "total_beats" value="<%= @beats.length %>">
     <input type="submit" value="Save Sequence">
   </form>
 

@@ -21,7 +21,17 @@ post '/ui/:id/save' do
 end
 
 post '/ui/create' do
-  p params
+  args =  params
+  p args
+  p args.class
+
+
+
+
+  # create_sequence(params)
+
+
+
   @user = User.find(session[:user_id])
   redirect "/users/#{@user.id}"
 end
