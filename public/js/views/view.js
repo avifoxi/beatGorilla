@@ -4,6 +4,9 @@ function View(model, elements) {
   this._model = model;
   this._elements = elements;
 
+  this.numSounds = $('tr').length;
+  this.beatsPerSound = $('td').length / this.numSounds;
+
   this._beatPosition = 2;
 
   this.buttonClicked = new Event(this);
@@ -38,7 +41,12 @@ View.prototype = {
   checkRow : function(soundName) {
     console.log(soundName);
   },
-  highlightColumn : function() {
-
+  highlightCurrentBeat : function() {
+    var _this = this;
+    $('.currentBeat').removeClass("currentBeat");
+    $('td:nth-child(' + _this._beatPosition + ')').addClass("currentBeat");
+    _this._beatPosition += 1;
+    if (_this._beatPosition > _this.beatsPerSound) { _this._beatPosition = 2;
+    }
   }
 }
