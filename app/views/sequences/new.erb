@@ -2,25 +2,37 @@
 
 <script src="/js/user_interface_development.js"></script>
 
+<div><%= erb :"/partials/_navbar"  %></div>
+
+
 <div class="container">
 
-  <h1>Sequence by <%= @user.name %>!</h1>
+  <h1>Create your Sequence, <%= @user.name %>!</h1>
 
-  <form action='/ui/<%= @sequence.id %>/save' method="post">
+  <form action='/ui/create' id='create' method="post">
+    <input type="text" name="seq_name" placeholder="name your sequence">
+    <input type="text" name="seq_tempo" placeholder="tempo (beats/min)">
+    <input type="hidden" name = "seq_user_id" value="<%= @user.id %>">
+    <input type="hidden" name = "seq_beats" value="<%= @beats.length %>">
+
     <table>
-      <% @soundpatterns.each do |sp| %>
-        <tr class="<%= sp.sound.name %>">
-
-          <% sp.beats.each do |beat| %>
-            <td class="<%= beat.position %>"><input type="checkbox" name=" <%= sp %> " value="<%= beat %>" <% if beat.play == true %>checked<% end %>></td>
+      <% @patterns.each do |pattern| %>
+        <tr>
+          <td>
+            <select name="sound<%= pattern %>_id" form='create'>
+              <% @sounds.each do |sound| %>
+                <option value="<%= sound.id %>"><%= sound.name %></option>
+              <% end %>
+            </select>
+          </td>
+          <% @beats.each do |beat| %>
+            <td><input type="checkbox" name="pattern<%= pattern %>[<%= beat %>]" value=true></td>
           <% end %>
-
         </tr>
       <% end %>
     </table>
 
     <br><br>
-
     <input type="submit" value="Save Sequence">
   </form>
 

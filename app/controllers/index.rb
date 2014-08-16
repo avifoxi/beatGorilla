@@ -18,3 +18,6 @@ post '/logout' do
   redirect '/'
 end
 
+get '/error' do
+  erb :error
+end
