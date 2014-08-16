@@ -7,14 +7,19 @@ $(document).ready(function() {
     var num_beats_per_soundpattern = $('td').length / num_soundpatterns;
 
     // start at 2 because sound name is in position 1
-    var beat_position=2;
-
+    var current_beat_position=2;
+    var last_beat_position = 1;
 
     function highlightColumn() {
-        $('td').css("background", "white");
-        $('td:nth-child(' + beat_position + ')').css("background", "yellow");
-        beat_position += 1;
-        if (beat_position > num_beats_per_soundpattern) { beat_position = 2; };
+        $('td:nth-child(' + last_beat_position + ')').removeClass("highlight");
+        $('td:nth-child(' + current_beat_position + ')').addClass("highlight");
+
+        current_beat_position += 1;
+        last_beat_position += 1;
+
+        // odd logic, but it works!
+        if (current_beat_position > num_beats_per_soundpattern) { current_beat_position = 2; };
+        if (last_beat_position > num_beats_per_soundpattern) { last_beat_position = 2; };
     }
 
 
@@ -23,13 +28,3 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
-    // function loopSequence() {
-    //     for (i=1; i<=num_beats_per_soundpattern; i++) {
-    //         $('#play_button').on('click', highlightColumn(i));
-    //         // $('td').css("background", "white");
-    //     };
-    // };
