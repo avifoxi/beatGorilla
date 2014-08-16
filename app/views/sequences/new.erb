@@ -7,15 +7,23 @@
 
 <div class="container">
 
-  <h1>Sequence by <%= @user.name %>!</h1>
+  <h1>Create your Sequence, <%= @user.name %>!</h1>
 
-  <form action='/ui/create' method="post">
+  <form action='/ui/create' id='create' method="post">
+    <input type="text" name="seq_name" placeholder="name your sequence">
     <table>
-      <% @soundpatterns.each do |sp| %>
-        <tr class="<%= sp.sound.name %>">
+      <% @drums.each do |drum| %>
+        <tr>
+          <td>
+            <select name="drum_<%= drum %>" form='create'>
+              <% @sounds.each do |sound| %>
+               <option value="<%= sound.id %>"><%= sound.name %></option>
+              <% end %>
+            </select>
+        </td>
 
-          <% sp.beats.each do |beat| %>
-            <td class="<%= beat.position %>"><input type="checkbox" name=" <%= sp %> " value="<%= beat %>" <% if beat.play == true %>checked<% end %>></td>
+          <% @beats.each do |beat| %>
+            <td><input type="checkbox" name="beat_<%= beat %>" value="<%= beat %>"></td>
           <% end %>
 
         </tr>

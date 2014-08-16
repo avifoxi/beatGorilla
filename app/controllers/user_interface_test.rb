@@ -22,6 +22,6 @@ end
 
 post '/ui/create' do
   p params
-  console.log(params)
+  @user = User.find(session[:user_id])
   redirect "/users/#{@user.id}"
 end
