@@ -21,17 +21,19 @@ post '/ui/:id/save' do
 end
 
 post '/ui/create' do
-  args =  params
-  p args
-  p args.class
 
+  seq = Sequence.create(name: params["seq_name"], tempo: params["seq_tempo"], steps: params["seq_beats"], user_id: params["seq_user_id"]) 
 
+  params["seq_drums"].to_i.times do |i|
+    sound_p = SoundPattern.create(sound_id: params["sp#{i+1}_id"].to_i, sequence_id: seq.id)
 
+    params["seq_beats"].to_i.times do |index|
+      params["sp#{i+1}"].has_key?((index + 1).to_s) ? play_beat = true : play_beat = false
+      Beat.create(play: play_beat, position: (index + 1), sound_pattern_id: sound_p.id)
+    end
 
-  # create_sequence(params)
+  end
 
-
-
-  @user = User.find(session[:user_id])
+  @user = User.find(seq.user_id)
   redirect "/users/#{@user.id}"
 end
