@@ -1,3 +1,7 @@
+get '/users/new' do
+  redirect '/'
+end
+
 post '/users/new' do
   @user = User.new(params[:signup])
   @user.password = params[:signup][:password]

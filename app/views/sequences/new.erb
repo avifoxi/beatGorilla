@@ -2,11 +2,14 @@
 
 <script src="/js/user_interface_development.js"></script>
 
+<div><%= erb :"/partials/_navbar"  %></div>
+
+
 <div class="container">
 
   <h1>Sequence by <%= @user.name %>!</h1>
 
-  <form action='/ui/<%= @sequence.id %>/save' method="post">
+  <form action='/ui/create' method="post">
     <table>
       <% @soundpatterns.each do |sp| %>
         <tr class="<%= sp.sound.name %>">

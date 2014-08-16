@@ -1,3 +1,5 @@
+
+
 get '/ui/new' do
 
 end
@@ -16,4 +18,10 @@ post '/ui/:id/save' do
   #create or save by sequence code
   p params
   redirect "/ui/#{params[:id]}"
+end
+
+post '/ui/create' do
+  p params
+  console.log(params)
+  redirect "/users/#{@user.id}"
 end
