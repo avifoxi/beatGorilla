@@ -9,15 +9,20 @@ function View(model, elements) {
 
   this._beatPosition = 2;
 
-  this.buttonClicked = new Event(this);
+  this.playButtClicked = new Event(this);
+  this.stopButtClicked = new Event(this);
 
   var _this = this;
 
   // attach listener to button
 
-  // this._elements.button.onclick = function(){
-  //     _this.buttonClicked.notify();
-  // }
+  this._elements.playButt.onclick = function(){
+      _this.playButtClicked.notify();
+  }
+
+  this._elements.stopButt.onclick = function(){
+      _this.stopButtClicked.notify();
+  }
 
   //  HI GUYS! we are passing the newBeat function in here - it recieves a notification at each beat of the metronome. on YOUR end - setup an Event (see above and check Event class), where newBeat triggers a sender in the view, and gets a bunch of listeners that respond. I can explain
 }
@@ -26,6 +31,7 @@ View.prototype = {
   newBeat : function() {
     console.log('wake up view, its beat time!');
     this.highlightCurrentBeat();
+    this.checkForScheduled();
   },
 
 
