@@ -23,6 +23,10 @@ Controller.prototype = {
   },
   prepareSample : function(url){
     this._model.prepareSample(url);
+  },
+  prepareKit : function(obj) {
+    // console.log(obj);
+    this._model.prepareKit(obj);
   }
 }
 

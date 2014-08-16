@@ -4,6 +4,8 @@ function View(model, elements) {
   this._model = model;
   this._elements = elements;
 
+  this._beatPosition = 2;
+
   this.buttonClicked = new Event(this);
 
   var _this = this;
@@ -20,5 +22,23 @@ function View(model, elements) {
 View.prototype = {
   newBeat : function() {
     console.log('wake up view, its beat time!');
+  },
+
+  checkScheduledBeats : function() {
+    var _this = this;
+    var soundNames = Object.getOwnPropertyNames(_this._model._decodedBuffers);
+
+    console.log(soundNames);
+    for (var i = 0; i<soundNames.length; i++ ){
+      _this.checkRow(soundNames[i])
+    }
+
+  },
+
+  checkRow : function(soundName) {
+    console.log(soundName);
+  },
+  highlightColumn : function() {
+
   }
 }

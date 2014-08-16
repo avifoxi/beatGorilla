@@ -4,20 +4,20 @@ console.log('hello from Model!')
 
 function Model(context, tempo) {
   this._context = context;
-  this._decodedBuffers = [];
+  this._decodedBuffers = {};
   this._metronome = new Metronome( this._context, tempo);
 }
 
 Model.prototype = {
 
-  playSound : function() {
+  playSound : function(name, when) {
     var context = this._context;
     var source = context.createBufferSource();
-    source.buffer = this._decodedBuffers[0];
+    source.buffer = this._decodedBuffers[name];
     source.connect(context.destination);
-    source.start(0);
+    source.start(when);
   },
-  prepareSample : function(url) {
+  prepareSample : function(url, name) {
     var _this = this;
     var request= new XMLHttpRequest();
     request.open('GET', url, true);
@@ -25,9 +25,22 @@ Model.prototype = {
 
     request.onload = function() {
       _this._context.decodeAudioData(request.response, function(buffer) {
-          _this._decodedBuffers.push(buffer);
+          _this._decodedBuffers[name] = buffer;
+
+          // console.log(_this._decodedBuffers);
         }, function(){alert('oh shit...')} );
       }
     request.send();
+  },
+  prepareKit : function(namesUrls){
+    // console.log(namesUrls);
+    var _this = this;
+    var names = Object.getOwnPropertyNames(namesUrls);
+    // console.log(names);
+    for (var i = 0; i < names.length; i++) {
+      var name = names[i];
+      // console.log(namesUrls[name]);
+      _this.prepareSample(namesUrls[name], name);
+    }
   }
 }
