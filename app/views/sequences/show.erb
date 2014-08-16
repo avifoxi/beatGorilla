@@ -13,7 +13,7 @@
         <tr class="<%= sp.sound.name %>">
           <td><%= sp.sound.name %></td>
 
-          <% sp.beats.each do |beat| %>
+          <% sp.beats.order(:position).each do |beat| %>
             <td class="<%= beat.position %>"><input type="checkbox" name="<%= sp.sound.id %>[]" value="<%= beat.id %>" <% if beat.play == true %>checked<% end %>></td>
           <% end %>
 

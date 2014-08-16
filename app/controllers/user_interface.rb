@@ -15,27 +15,27 @@ end
 
 # BUGGY IMPLEMENTATION, NEEDS TO BE FIXED!!!!!
 put '/ui/:id/save' do
+  active_beats = []
+
   sequence = Sequence.find(params[:id])
 
+  # build array of active beats and reset all beats to false
   sequence.sound_patterns.each do |sp|
-    p on_beats = params[sp.id.to_s]
+    active_beats << params[sp.id.to_s] unless params[sp.id.to_s] == nil
 
     sp.beats.each do |b|
       beat = Beat.find(b.id)
-
-      if on_beats.include?(b.id.to_s)
-        beat.play = true
-      else
-        beat.play = false
-      end
-
+      beat.play = false
       beat.save
     end
-
   end
 
+  # change active beats to true
+  active_beats.flatten.each do |beat_id|
+    beat = Beat.find(beat_id)
+    beat.play = true
+    beat.save
+  end
 
-  #create or save by sequence code
-  # p params
   redirect "/ui/#{params[:id]}"
 end
