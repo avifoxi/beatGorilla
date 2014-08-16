@@ -25,6 +25,7 @@ function View(model, elements) {
 View.prototype = {
   newBeat : function() {
     console.log('wake up view, its beat time!');
+    this.highlightCurrentBeat();
   },
 
   checkScheduledBeats : function() {
