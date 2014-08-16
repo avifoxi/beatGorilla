@@ -10,12 +10,12 @@ function Model(context, tempo) {
 
 Model.prototype = {
 
-  playSound : function(name, when) {
+  playSound : function(name) {
     var context = this._context;
     var source = context.createBufferSource();
     source.buffer = this._decodedBuffers[name];
     source.connect(context.destination);
-    source.start(when);
+    source.start(0);
   },
   prepareSample : function(url, name) {
     var _this = this;

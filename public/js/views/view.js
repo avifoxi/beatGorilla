@@ -28,26 +28,28 @@ View.prototype = {
     this.highlightCurrentBeat();
   },
 
-  checkScheduledBeats : function() {
-    var _this = this;
-    var soundNames = Object.getOwnPropertyNames(_this._model._decodedBuffers);
 
-    console.log(soundNames);
-    for (var i = 0; i<soundNames.length; i++ ){
-      _this.checkRow(soundNames[i])
-    }
-
-  },
-
-  checkRow : function(soundName) {
-    console.log(soundName);
-  },
   highlightCurrentBeat : function() {
     var _this = this;
     $('.currentBeat').removeClass("currentBeat");
     $('td:nth-child(' + _this._beatPosition + ')').addClass("currentBeat");
     _this._beatPosition += 1;
     if (_this._beatPosition > _this.beatsPerSound) { _this._beatPosition = 2;
+    }
+  },
+
+  checkForScheduled : function() {
+    var _this = this;
+    var columns = document.getElementsByClassName('currentBeat');
+    for (var i =0; i < columns.length; i++) {
+      var column = columns[i];
+      var checkbox = column.childNodes[1]
+
+      if (checkbox.checked === true ) {
+        var name = column.classList[0];
+        name = name.replace(/\d/g,'');
+        _this._model.playSound(name);
+      }
     }
   }
 }
