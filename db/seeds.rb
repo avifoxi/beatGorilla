@@ -4,8 +4,13 @@ eddie.save
 
 seq_one = Sequence.create(name: "sequence1", tempo: 120, steps: 8, user_id: eddie.id)
 
+# TO DO: update the sounds in seed with the routes to actual sounds in public/sounds/mvp_sounds folder, ala: kick => '/sounds/mvp_sounds/Kick_ac_close.wav'
+
 sounds = %w(snare kick cymbal tom)
 sounds.each {|sound| sound = Sound.create(name: "#{sound}", url: "www.#{sound}.com")}
+
+
+
 
 soundPs = %w(sp1 sp2 sp3 sp4)
 soundPs.each_with_index {|sp, i| sp = SoundPattern.create(sound_id: (i + 1), sequence_id: seq_one.id)}
