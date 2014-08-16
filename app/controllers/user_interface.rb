@@ -8,6 +8,8 @@ get '/ui/:id' do
   @user = @sequence.user
   @soundpatterns = @sequence.sound_patterns
 
+  
+
   erb :'sequences/show'
 end
 
