@@ -4,7 +4,7 @@
   console.log('hello from application.js!')
 
     // first the model
-  var model = new Model(new AudioContext() );
+  var model = new Model(new AudioContext(), 1000 );
 
   var button = document.getElementsByTagName('button')[0];
   var view = new View(model, { 'button' : button });
