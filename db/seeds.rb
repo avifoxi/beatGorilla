@@ -8,8 +8,8 @@ seq_one = Sequence.create(name: "sequence1", tempo: 120, steps: 8, user_id: eddi
 
 Sound.create(name: 'mvpSnare', url: '/sounds/mvp_sounds/Snare_ac_close.wav')
 Sound.create(name: 'mvpKick', url: '/sounds/mvp_sounds/Kick_ac_close.wav')
-Sound.create(name: 'mvpCrash1', url: '/sounds/mvp_sounds/Crash1_ac_close.wav')
-Sound.create(name: 'mvpCrash2', url: '/sounds/mvp_sounds/Crash2_ac_close.wav')
+Sound.create(name: 'mvpCrashSoft', url: '/sounds/mvp_sounds/Crash1_ac_close.wav')
+Sound.create(name: 'mvpCrashHard', url: '/sounds/mvp_sounds/Crash2_ac_close.wav')
 Sound.create(name: 'mvpHihat', url: '/sounds/mvp_sounds/ClosedHat_ac_close.wav')
 Sound.create(name: 'mvpLowTom', url: '/sounds/mvp_sounds/LowTom_ac_close.wav')
 Sound.create(name: 'mvpMidTom', url: '/sounds/mvp_sounds/MidTom_ac_close.wav')

@@ -38,6 +38,9 @@ Controller.prototype = {
   prepareKit : function(obj) {
     // console.log(obj);
     this._model.prepareKit(obj);
+  },
+  getKitFromServer : function(){
+    //on page load -- this should make Ajax call with to find out what our sounds for the current kit are gonna be. then call this.prepareKit
   }
 }
 
