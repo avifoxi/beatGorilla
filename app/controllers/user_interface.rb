@@ -8,12 +8,8 @@ get '/ui/:id' do
   @user = @sequence.user
   @soundpatterns = @sequence.sound_patterns
 
-  
-
   erb :'sequences/show'
 end
-
-
 
 put '/ui/:id/save' do
   active_beats = []
@@ -40,8 +36,6 @@ put '/ui/:id/save' do
 
   redirect "/ui/#{params[:id]}"
 end
-
-
 
 
 post '/ui/create' do
