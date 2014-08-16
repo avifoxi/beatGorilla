@@ -1,14 +1,11 @@
 get '/sequences/create' do
   @user = User.find(session[:user_id]) if session[:user_id]
   redirect '/error' unless @user
+  
   @sounds = Sound.all
-  @drums = Array.new(4) {|i| i + 1}
-  @beats = Array.new(8) {|i| i + 1}
+  @drums = Array.new(4) {|i| i + 1} # (4) could be a variable, needed to display new.erb and save sequence
+  @beats = Array.new(8) {|i| i + 1} # (8) could be a variable, needed to display new.erb and save sequence
 
-  # @sequence = Sequence.first # for testing only, should be blank, need new template erb
-  # @soundpatterns = @sequence.sound_patterns # for testing only, should be blank
-  # p @sequence
-  # p @soundpatterns
   erb :"/sequences/new"
 end
 
