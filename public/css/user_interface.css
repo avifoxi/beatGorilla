@@ -28,7 +28,7 @@ tr:nth-child(even) {
   background: #787878;
 }
 
-.highlight {
+.currentBeat {
   background: yellow;
   opacity: 0.85;
 }
