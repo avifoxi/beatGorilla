@@ -3,5 +3,14 @@ get '/dynamic/new' do
 end
 
 get '/sequence_specs' do
-  Sequence.new
+  seq = Sequence.prep_template
+  # seq_json = {
+  #   seq
+  # }.to_json
+  prepper = SequenceJsonPrep.new(seq)
+  prepper.to_hash.to_json
 end
+
+
+
+# name:

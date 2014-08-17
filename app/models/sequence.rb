@@ -4,7 +4,7 @@ class Sequence < ActiveRecord::Base
 
   has_many :sounds, through: :sound_patterns
 
-  def self.prepTemplate
+  def self.prep_template
     seq = Sequence.new
     seq.name = 'Name Your Phat Beat!'
     seq.tempo = 120
