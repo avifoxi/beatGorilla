@@ -9,10 +9,16 @@ class Sequence < ActiveRecord::Base
     seq.name = 'Name Your Phat Beat!'
     seq.tempo = 120
     seq.steps = 8
-    # seq.sounds << Sound.find(1)
-    # seq.sounds << Sound.find(2)
-    seq
+    seq.sounds << Sound.find(1) # snare
+    seq.sounds << Sound.find(2) # kick
 
+    seq.sound_patterns.each do |sp|
+      seq.steps.times do |i|
+        sp.beats << Beat.new(position: i)
+      end
+    end
+
+    seq
   end
 
 end
