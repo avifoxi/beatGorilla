@@ -33,20 +33,23 @@ Model.prototype = {
       }
     request.send();
   },
-  prepareKit : function(namesUrls){
-    // console.log(namesUrls);
+  prepareKit : function(soundPatterns){
+    console.log(soundPatterns);
     var _this = this;
-    var names = Object.getOwnPropertyNames(namesUrls);
-    // console.log(names);
+    var names = Object.getOwnPropertyNames(soundPatterns);
+
     for (var i = 0; i < names.length; i++) {
       var name = names[i];
-      // console.log(namesUrls[name]);
-      _this.prepareSample(namesUrls[name], name);
+
+      // if we haven't already decoded the sound, proceed
+      if (!_this._decodedBuffers[name]) {
+        _this.prepareSample(soundPatterns[name].url, name);
+      }
     }
   },
   updateSequenceDependencies : function() {
     var _this = this;
-    console.log('the new sequence looks like this:' + this._sequence );
     this._metronome._tempo = _this._sequence.tempo
+    this.prepareKit(_this._sequence.soundPatterns);
   }
 }

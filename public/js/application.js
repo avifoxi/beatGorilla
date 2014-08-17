@@ -20,17 +20,17 @@
 
   // TODO - currently samples are hard coded - this process SHOULD take a json obj from the db and parse it into a form like thsi to load
 
-  controller.prepareKit( {
-		'mvpSnare' : '/sounds/mvp_sounds/Snare_ac_close.wav',
-		'mvpKick' : '/sounds/mvp_sounds/Kick_ac_close.wav',
-		'mvpCrashSoft' : '/sounds/mvp_sounds/Crash1_ac_close.wav',
-		'mvpCrashHard' : '/sounds/mvp_sounds/Crash2_ac_close.wav',
-    'mvpHihat' : '/sounds/mvp_sounds/ClosedHat_ac_close.wav',
-    'mvpLowTom' : '/sounds/mvp_sounds/LowTom_ac_close.wav',
-    'mvpMidTom' : '/sounds/mvp_sounds/MidTom_ac_close.wav',
-    'mvpTambr' : '/sounds/mvp_sounds/Tamb_ac_close.wav'
-	});
-
+ //  controller.prepareKit( {
+	// 	'mvpSnare' : '/sounds/mvp_sounds/Snare_ac_close.wav',
+	// 	'mvpKick' : '/sounds/mvp_sounds/Kick_ac_close.wav',
+	// 	'mvpCrashSoft' : '/sounds/mvp_sounds/Crash1_ac_close.wav',
+	// 	'mvpCrashHard' : '/sounds/mvp_sounds/Crash2_ac_close.wav',
+ //    'mvpHihat' : '/sounds/mvp_sounds/ClosedHat_ac_close.wav',
+ //    'mvpLowTom' : '/sounds/mvp_sounds/LowTom_ac_close.wav',
+ //    'mvpMidTom' : '/sounds/mvp_sounds/MidTom_ac_close.wav',
+ //    'mvpTambr' : '/sounds/mvp_sounds/Tamb_ac_close.wav'
+	// });
+  controller.getSeqSpecs();
 // });
 
 
