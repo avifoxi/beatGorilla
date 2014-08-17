@@ -1,13 +1,13 @@
 
-/*.hide {
+.hide {
   display:none;
 }
 
 .show {
   display: block;
-}*/
+}
 
-/*.form {
+.form {
 
   position: fixed;
   top: 30%;
@@ -17,4 +17,4 @@
   z-index:1000;
   border:2px solid black;
 }
-*/
+
