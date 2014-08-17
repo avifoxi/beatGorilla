@@ -22,21 +22,21 @@ $(document).ready(function(){
   //   data: $(this).serialize(),
   //   dataType: "html",
   //   success: function(data) {
-  //     console.log(data)
+  //     console.log(data);
 
-  //     // $('.navigation').html(data);
-  //     //   // $('#nav').remove();
-  //     //   // $();
-  //     // $('.logged-out').removeClass('show');
-  //     // $('.logged-in').addClass('show');
+  //     $('.navigation').html(data);
+  //       // $('#nav').remove();
+  //       // $();
+  //     $('.logged-out').removeClass('show');
+  //     $('.logged-in').addClass('show');
   //   }
-  //     });
+  //   });
   });
 
   $("#signupButton").click(function(event){
     event.preventDefault();
     $("form#signupForm").fadeIn( "slow", function(){
-      });
+     });
   });
 
   $("#signupAway").click(function(event){
