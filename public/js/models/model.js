@@ -2,10 +2,10 @@
 console.log('hello from Model!')
 
 
-function Model(context, tempo) {
+function Model(context) {
   this._context = context;
   this._decodedBuffers = {};
-  this._metronome = new Metronome( this._context, tempo);
+  this._metronome = new Metronome( this._context);
   this._sequence;
 }
 
@@ -45,6 +45,8 @@ Model.prototype = {
     }
   },
   updateSequenceDependencies : function() {
+    var _this = this;
     console.log('the new sequence looks like this:' + this._sequence );
+    this._metronome._tempo = _this._sequence.tempo
   }
 }

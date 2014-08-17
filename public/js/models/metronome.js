@@ -2,9 +2,9 @@ console.log('hello from Metronome!')
 
 // placeholder - this is a dumb metronome - but it works for MVP
 
-function Metronome(context, tempoBpm) {
+function Metronome(context, tempo) {
     this._context = context;
-    this._tempoBpm = tempoBpm;
+    this._tempo = tempo;
     this._isPlaying = false;
 
     this.beatDropped = new Event(this);
@@ -26,13 +26,13 @@ Metronome.prototype = {
     recursiveTimer : function() {
 
         var _this = this;
-        var internalTempo = this._tempoBpm;
+        var internalTempo = this._tempo;
 
         window.setTimeout( function(){
             console.log(_this);
             _this.dropBeat();
             if (_this._isPlaying === true) {
-                _this.startPlay(this._tempoBpm);
+                _this.startPlay(this._tempo);
             }
         }, internalTempo);
 
