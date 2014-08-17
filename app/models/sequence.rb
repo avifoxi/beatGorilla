@@ -1,5 +1,5 @@
 class Sequence < ActiveRecord::Base
-  has_many :sound_patterns
+  has_many :sound_patterns, dependent: :destroy
   belongs_to :user
 
   has_many :sounds, through: :sound_patterns
