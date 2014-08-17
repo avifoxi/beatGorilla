@@ -7,9 +7,14 @@ function Controller(model, view) {
 
   var beatCount = 0;
 
-  // this._view.buttonClicked.attach( function() {
-  //   _this.playSound();
-  // });
+  this.sequenceUpdated = new Event(this);
+
+  this.sequenceUpdated.attach( function() {
+    _this._model.updateSequenceDependencies();
+    _this._view.updateSequence();
+  })
+
+  // this.
 
   this._model._metronome.beatDropped.attach( function() {
     // console.log(beatCount += 1)
@@ -51,11 +56,16 @@ Controller.prototype = {
       method: 'get'
       })
       .done( function(data) {
-        _this._model._sequence = JSON.parse(data);
+        _this.updateSequence( JSON.parse(data) )
+        // _this.
       })
       .fail( function(){
         console.log('failure...')
     });
+  },
+  updateSequence : function( sequenceObj ) {
+    this._model._sequence = sequenceObj;
+    this.sequenceUpdated.notify();
   }
 
 

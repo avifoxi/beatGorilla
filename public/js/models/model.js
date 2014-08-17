@@ -43,5 +43,8 @@ Model.prototype = {
       // console.log(namesUrls[name]);
       _this.prepareSample(namesUrls[name], name);
     }
+  },
+  updateSequenceDependencies : function() {
+    console.log('the new sequence looks like this:' + this._sequence );
   }
 }

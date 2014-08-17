@@ -58,5 +58,8 @@ View.prototype = {
         _this._model.playSound(name);
       }
     }
+  },
+  updateSequence : function() {
+    console.log('view sequence: ' + this._model._sequence )
   }
 }
