@@ -16,6 +16,25 @@ $(document).ready(function(){
   $("form#loginForm").submit(function(event){
     event.preventDefault();
 
+    var response = $.ajax('/login',
+    { method: 'post',
+      data: $(this).serialize()
+    });
+
+    response.done(function() {
+      window.location.reload(true);
+     });
+
+    $("form#loginForm").fadeOut( "slow", function(){
+      });
+  });
+
+  // response.done(function(responseData) {
+  //   console.log("got response")
+  //   // $("#" + responseData[0]).html(responseData[1])
+  // });
+
+
   // $.ajax({
   //   url: "/login",
   //   type: "POST"
@@ -31,7 +50,7 @@ $(document).ready(function(){
   //     $('.logged-in').addClass('show');
   //   }
   //   });
-  });
+
 
   $("#signupButton").click(function(event){
     event.preventDefault();
@@ -47,6 +66,19 @@ $(document).ready(function(){
 
   $("form#signupForm").submit(function(event){
     event.preventDefault();
+
+    var response = $.ajax('/users/new',
+    { method: 'post',
+      data: $(this).serialize()
+     });
+
+    response.done(function() {
+      window.location.reload(true);
+     });
+
+    $("form#signupForm").fadeOut( "slow", function(){
+      });
+
   });
 
 });

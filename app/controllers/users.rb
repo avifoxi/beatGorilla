@@ -7,7 +7,12 @@ post '/users/new' do
   @user.password = params[:signup][:password]
   @user.save
   session[:user_id] = @user.id
-  redirect '/'
+  if session[:user_id]
+    200
+  else
+    401
+  end
+  # redirect '/'
 end
 
 get '/users/:id' do

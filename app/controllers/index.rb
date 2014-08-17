@@ -5,11 +5,13 @@ end
 
 post '/login' do
   @user = User.find_by_email(params[:email])
-  if @user && @user.password = params[:password]
+  if @user && @user.password == params[:password]
     session[:user_id] = @user.id
-    redirect '/'
+    200
+    # redirect '/'
   else
-    return "Error"
+    401
+    # return "Error"
   end
 end
 
