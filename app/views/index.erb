@@ -2,7 +2,7 @@
 
 <div class="container">
   <h1>Welcome to Beat Gorilla!</h1>
-  <% @sequences.each do |sequence| %>
-  <div><a href="/ui/<%= sequence.id %>"><%= sequence.name %></a></div>
-  <% end %>
+    <% @sequences.each do |sequence| %>
+      <div><a href="/ui/<%= sequence.id %>"><%= sequence.name %></a></div>
+    <% end %>
 </div>

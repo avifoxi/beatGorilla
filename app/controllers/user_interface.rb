@@ -1,7 +1,5 @@
 get '/ui/new' do
-
 end
-
 
 get '/ui/:id' do
   @sequence = Sequence.find(params[:id])
@@ -15,7 +13,6 @@ put '/ui/:id/save' do
   active_beats = []
 
   sequence = Sequence.find(params[:id])
-
   # build array of active beats and reset all beats to false
   sequence.sound_patterns.each do |sp|
     active_beats << params[sp.id.to_s] unless params[sp.id.to_s] == nil
