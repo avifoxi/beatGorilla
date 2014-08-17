@@ -6,6 +6,7 @@ function Model(context, tempo) {
   this._context = context;
   this._decodedBuffers = {};
   this._metronome = new Metronome( this._context, tempo);
+  this._sequence;
 }
 
 Model.prototype = {

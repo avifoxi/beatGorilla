@@ -39,9 +39,26 @@ Controller.prototype = {
     // console.log(obj);
     this._model.prepareKit(obj);
   },
-  getKitFromServer : function(){
-    //on page load -- this should make Ajax call with to find out what our sounds for the current kit are gonna be. then call this.prepareKit
+  getSeqSpecs : function(sequence_id) {
+    var url = '/sequence_specs';
+    if (sequence_id) {
+      url.concat(sequence_id)
+    }
+    var _this = this;
+    $.ajax({
+      url: url,
+      type: 'json',
+      method: 'get'
+      })
+      .done( function(data) {
+        _this._model._sequence = JSON.parse(data);
+      })
+      .fail( function(){
+        console.log('failure...')
+    });
   }
+
+
 }
 
 console.log('hello from Controller!')
