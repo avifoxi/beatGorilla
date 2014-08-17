@@ -4,13 +4,15 @@ end
 
 get '/sequence_specs' do
   seq = Sequence.prep_template
-  # seq_json = {
-  #   seq
-  # }.to_json
   prepper = SequenceJsonPrep.new(seq)
-  prepper.to_hash.to_json
+  prepper.jsonify
 end
 
+get '/sequence_specs/:id' do
+  seq = Sequence.find(params[:id])
+  prepper = SequenceJsonPrep.new(seq)
+  prepper.jsonify
+end
 
 
 # name:
