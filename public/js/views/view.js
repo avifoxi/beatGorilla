@@ -54,6 +54,7 @@ View.prototype = {
       if (checkbox.checked === true ) {
         var name = column.classList[0];
         name = name.replace(/\d/g,'');
+        console.log(name);
         _this._model.playSound(name);
       }
     }
