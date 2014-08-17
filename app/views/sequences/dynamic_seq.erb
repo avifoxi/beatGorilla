@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/user_interface.css">
+
+<div><%= erb :"/partials/_navbar"  %></div>
+
+<div class="container">
+
+
+  <table>
+  </table>
+
+  <br><br>
+
+  <button id="playButt">Play</button>
+  <button id="stopButt">Stop</button>
+
+
+  <!-- the post address should be determined by JS dynamically too -->
+  <form action='#' method="post">
+    <input type="hidden" name="_method" value="put" />
+    <input type="submit" value="Save Sequence">
+  </form>
+
+
+
+</div>
