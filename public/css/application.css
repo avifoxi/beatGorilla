@@ -7,3 +7,9 @@
 th {
   text-align: left;
 }
+
+#nav {
+  /*margin: 20px;*/
+  background: gray;
+
+}
