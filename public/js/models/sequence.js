@@ -9,9 +9,9 @@ function Sequence(obj) {
 Sequence.prototype = {
 }
 
-function SoundPattern(obj) {
-	this.sound = obj.sound;
-}
+// function SoundPattern(obj) {
+// 	this.sound = obj.sound;
+// }
 
 function Sound(obj) {
 	this.beats = obj.beats;

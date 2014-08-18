@@ -73,24 +73,36 @@ Controller.prototype = {
     var _this = this;
     var sequence = new Sequence( JSON.parse(json) );
     console.log(sequence);
-    sps = Object.getOwnPropertyNames(sequence.soundPatterns);
+    var sps = Object.getOwnPropertyNames(sequence.soundPatterns);
     for (var i = 0; i < sps.length; i++){
       
       sequence.soundPatterns[sps[i] ] = _this.soundify(sequence.soundPatterns[sps[i] ]);
 
       // console.log(sps[i])
     }
-    console.log(sequence);
+    // console.log(sequence);
   },
   soundify : function(sp) {
     var _this = this;
     var sound = new Sound({'url': sp.url, 'beats': _this.beatsify(sp.beats)});
+    // console.log(sp.beats)
     return sound
   },
   beatsify : function (beats) {
-    console.log(beats);
+    var _this = this;
+    var modelBeats = {};
+    // console.log(beats);
+    var names = Object.getOwnPropertyNames(beats);
+    for (var i =0; i < names.length; i++ ){
+      modelBeats[ names[i] ] = _this.beatify(beats[ names[i] ]);  
+    }
+    return modelBeats;
+  },
+  beatify : function (beat) {
+    // console.log(beat)
+    var modelBeat = new Beat({'position': beat.position, 'play' : beat.play });
+    return modelBeat;
   }
-
 }
 
 console.log('hello from Controller!')
