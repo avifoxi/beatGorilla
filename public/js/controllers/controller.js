@@ -55,8 +55,10 @@ Controller.prototype = {
       type: 'json',
       method: 'get'
       })
-      .done( function(data) {
-        _this.updateSequence( JSON.parse(data) )
+      .done( function(json) {
+        _this.sequencify(json);
+
+        // once turned to sequence obj, and its contituent parts => then call _this.updateSequence
         // _this.
       })
       .fail( function(){
@@ -66,8 +68,28 @@ Controller.prototype = {
   updateSequence : function( sequenceObj ) {
     this._model._sequence = sequenceObj;
     this.sequenceUpdated.notify();
-  }
+  },
+  sequencify : function( json ) {
+    var _this = this;
+    var sequence = new Sequence( JSON.parse(json) );
+    console.log(sequence);
+    sps = Object.getOwnPropertyNames(sequence.soundPatterns);
+    for (var i = 0; i < sps.length; i++){
+      
+      sequence.soundPatterns[sps[i] ] = _this.soundify(sequence.soundPatterns[sps[i] ]);
 
+      // console.log(sps[i])
+    }
+    console.log(sequence);
+  },
+  soundify : function(sp) {
+    var _this = this;
+    var sound = new Sound({'url': sp.url, 'beats': _this.beatsify(sp.beats)});
+    return sound
+  },
+  beatsify : function (beats) {
+    console.log(beats);
+  }
 
 }
 

@@ -11,7 +11,6 @@ function Metronome(context, tempo) {
 
     var _this = this;
 
-
 }
 
 Metronome.prototype = {
