@@ -32,3 +32,25 @@ var beatToTd = function(beat, name) {
 	td.innerHTML = cb;
 	return td;
 }
+
+// this shit works purty nice 
+var table = document.getElementsByTagName('table')[0]
+var row = document.createElement('tr')
+table.appendChild(row)
+var td = document.createElement('td');
+row.appendChild(td)
+var cb = document.createElement('input');
+cb.type = 'checkbox';
+cb.value = '0';
+td.appendChild(cb)
+
+// when I append style here - color applies, but it doesn't default to css style definitions
+td.style.backgroundColor = 'blue'
+
+// also  not working. wtf.
+for (var i = 0; i < tds.length; i++) { tds[i].classList.add('blue')}
+
+
+
+
+

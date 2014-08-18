@@ -24,7 +24,7 @@ $(document).ready(function() {
     }
 
 
-    $('#play_button').on('click', highlightColumn);
+    // $('#play_button').on('click', highlightColumn);
 
 });
 

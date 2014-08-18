@@ -3,6 +3,8 @@ h1, h2 {
   font-family: courier, sans-serif;
 }
 
+/*body {background: red;}*/
+
 td {
   width: 50px;
   height: 50px;
@@ -60,6 +62,8 @@ input[type=submit] {
   color: #FFFFFF;
 }
 
-
+.blue {
+  background-color: blue;
+}
 
 
