@@ -1,18 +1,33 @@
+<link rel="stylesheet" href="/css/user_interface.css">
+
 <nav id="nav">
 
+<ul class="nav_ul">
+  <li class = "nav_li">
+    <a href="/">Home</a>
+  </li>
+  <li class = "nav_li">
+    <a href="/sequences/create">New Sequence</a>
+  </li>
   <% if session[:user_id] %>
-    <form action="/logout" method="POST">
+  <% user = User.find(session[:user_id]) %> 
+  <li class = "nav_li">
+    <a href="/users/<%= user.id %>">Your Profile</a>
+  </li>
+  <li class = "nav_li_right">
+    <form action="/logout" method="POST" id="logout">
       <input type="submit" id="logoutButton" value="Logout">
     </form>
-    <% user = User.find(session[:user_id]) %>
-    <a href="/users/<%= user.id %>">Your Profile</a>
+  </li>
   <% else %>
+  <li class = "nav_li">
     <a href="/login" id="loginButton">Login</a>
+  </li>
+  <li class = "nav_li_right">
     <a href="/users/new" id="signupButton">Register</a>
+  </li>
   <% end %>
 
-    <a href="/sequences/create">New Sequence</a>
-    <a href="/">Home</a>
 
 <!-- HIDDEN FORMS -->
   <form class="hide form" id="loginForm" action="/login" method="POST">
