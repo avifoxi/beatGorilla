@@ -26,7 +26,7 @@
             </select>
           </td>
           <% @beats.each do |beat| %>
-            <td><input type="checkbox" name="pattern<%= pattern %>[<%= beat %>]" value=true></td>
+            <td><input type="checkbox" name="pattern<%= pattern %>[<%= beat %>]" id="<%= pattern %>_<%= beat %>"><label for="<%= pattern %>_<%= beat %>"><span></span></label></td>
           <% end %>
         </tr>
       <% end %>
