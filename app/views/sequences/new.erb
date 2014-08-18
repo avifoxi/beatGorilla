@@ -2,18 +2,17 @@
 
 <script src="/js/user_interface_development.js"></script>
 
-<div><%= erb :"/partials/_navbar"  %></div>
-
 
 <div class="container">
 
-  <h1>Create your Sequence, <%= @user.name %>!</h1>
+  <h1>Create your Sequence</h1>
 
   <form action='/ui/create' id='create' method="post">
     <input type="text" name="seq_name" placeholder="name your sequence">
     <input type="text" name="seq_tempo" placeholder="tempo (beats/min)">
     <input type="hidden" name = "seq_user_id" value="<%= @user.id %>">
     <input type="hidden" name = "seq_beats" value="<%= @beats.length %>">
+    <br><br>
 
     <table>
       <% @patterns.each do |pattern| %>
@@ -26,7 +25,7 @@
             </select>
           </td>
           <% @beats.each do |beat| %>
-            <td><input type="checkbox" name="pattern<%= pattern %>[<%= beat %>]" value=true></td>
+            <td><input type="checkbox" name="pattern<%= pattern %>[<%= beat %>]" id="<%= pattern %>_<%= beat %>"><label for="<%= pattern %>_<%= beat %>"><span></span></label></td>
           <% end %>
         </tr>
       <% end %>
@@ -35,8 +34,8 @@
     <br><br>
     <input type="submit" value="Save Sequence">
   </form>
-
-  <button id="play_button">Play!</button>
+<br>
+  <button id="playButt">Play!</button>
 
 
 

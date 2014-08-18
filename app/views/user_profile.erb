@@ -1,12 +1,13 @@
-  <div><%= erb :"/partials/_navbar"  %></div>
 
 <div class="container">
   <h1><%= @user.name %>'s Profile Page</h1>
 
+  <div class="list">
   <h2>Your Sequences</h2>
   <ol>
   <% @user.sequences.each do |sequence| %>
-    <div><li><a href="/ui/<%= sequence.id %>"><%= sequence.name %></a></li></div>
+    <li><a href="/ui/<%= sequence.id %>"><%= sequence.name %></a></li>
   <% end %>
   </ol>
+ </div>
 </div>

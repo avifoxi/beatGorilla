@@ -1,8 +1,11 @@
-  <div><%= erb :"/partials/_navbar"  %></div>
-
 <div class="container">
   <h1>Welcome to Beat Gorilla!</h1>
+  <div class="list">
+    <h2>Choose a Sequence</h2>
+    <ol>
     <% @sequences.each do |sequence| %>
-      <div><a href="/ui/<%= sequence.id %>"><%= sequence.name %></a></div>
+      <li><a href="/ui/<%= sequence.id %>"><%= sequence.name %></a></li>
     <% end %>
+  </ol>
+  </div>
 </div>

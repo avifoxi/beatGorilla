@@ -2,11 +2,10 @@
 
 
 
-<div><%= erb :"/partials/_navbar"  %></div>
 
 <div class="container">
 
-  <h1>Sequence by <%= @user.name %>!</h1>
+  <h1>Sequence <%= @sequence.name %> by <%= @user.name %>!</h1>
 
   <form action='/ui/<%= @sequence.id %>/save' method="post">
     <input type="hidden" name="_method" value="put" />
@@ -17,7 +16,7 @@
 
           <% sp.beats.order(:position).each do |beat| %>
             <td class="<%= sp.sound.name %><%= beat.position %>">
-              <input type="checkbox" name="<%= sp.sound.id %>[]" value="<%= beat.id %>" id="<%= beat.id %>"<% if beat.play == true %>checked<% end %>>
+              <input type="checkbox" name="<%= sp.id %>[]" value="<%= beat.id %>" id="<%= beat.id %>"<% if beat.play == true %>checked<% end %>>
               <label for="<%= beat.id %>"><span></span></label>
             </td>
           <% end %>
@@ -34,6 +33,11 @@
 
   <button id="playButt">Play</button>
   <button id="stopButt">Stop</button>
+
+<form action='/ui/<%= @sequence.id %>/delete' method="post" id="delete">
+  <input type="hidden" name="_method" value="delete" />
+  <button id="deleteButt">Delete</button>
+</form>
 
 
 

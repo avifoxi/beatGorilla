@@ -60,6 +60,33 @@ input[type=submit] {
   color: #FFFFFF;
 }
 
+#playButt {
+  margin-left: 70px;
+  background: #787878;
+  border: 2px solid black;
+  font-family: courier, sans-serif;
+  color: #FFFFFF;
+}
+
+#stopButt {
+  margin-left: 70px;
+  background: #787878;
+  border: 2px solid black;
+  font-family: courier, sans-serif;
+  color: #FFFFFF;
+}
 
 
+#deleteButt {
+  display: inline-block;
+  margin-left: 70px;
+  background: #787878;
+  border: 2px solid black;
+  font-family: courier, sans-serif;
+  color: #FFFFFF;
+}
+
+#delete {
+  display: inline-block;
+}
 
