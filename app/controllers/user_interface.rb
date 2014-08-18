@@ -54,11 +54,8 @@ post '/ui/create' do
 end
 
 delete '/ui/:id/delete' do
-  p params
   sequence = Sequence.find(params[:id])
-
   sequence.destroy
-
   @user = User.find(session[:user_id])
   redirect "/users/#{@user.id}"
 end
