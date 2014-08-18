@@ -7,13 +7,14 @@
 
 <div class="container">
 
-  <h1>Create your Sequence, <%= @user.name %>!</h1>
+  <h1>Create your Sequence</h1>
 
   <form action='/ui/create' id='create' method="post">
     <input type="text" name="seq_name" placeholder="name your sequence">
     <input type="text" name="seq_tempo" placeholder="tempo (beats/min)">
     <input type="hidden" name = "seq_user_id" value="<%= @user.id %>">
     <input type="hidden" name = "seq_beats" value="<%= @beats.length %>">
+    <br><br>
 
     <table>
       <% @patterns.each do |pattern| %>
@@ -35,8 +36,8 @@
     <br><br>
     <input type="submit" value="Save Sequence">
   </form>
-
-  <button id="play_button">Play!</button>
+<br>
+  <button id="playButt">Play!</button>
 
 
 
