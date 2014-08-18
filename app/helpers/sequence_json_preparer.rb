@@ -35,9 +35,16 @@ class SequenceJsonPrep
     beats_hash = {}
     beats = sp.beats
     beats.each do |beat|
-      beats_hash[sp.sound.name + beat.position.to_s] = beat.play
+      beats_hash[sp.sound.name + beat.position.to_s] = hashify_beat(beat)
     end
     beats_hash
+  end
+
+  def hashify_beat(beat)
+    beat_hash = {}
+    beat_hash['position'] = beat.position
+    beat_hash['play'] = beat.play
+    beat_hash
   end
 
 end
