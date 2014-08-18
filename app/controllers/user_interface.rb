@@ -23,8 +23,6 @@ put '/ui/:id/save' do
       beat.save
     end
   end
-  p params
-  p active_beats
 
   # change active beats to true
   active_beats.flatten.each do |beat_id|
