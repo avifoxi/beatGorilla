@@ -6,7 +6,7 @@
   <h2>Your Sequences</h2>
   <ol>
   <% @user.sequences.each do |sequence| %>
-    <li><%= sequence.name %></li>
+    <div><li><a href="/ui/<%= sequence.id %>"><%= sequence.name %></a></li></div>
   <% end %>
   </ol>
 </div>
