@@ -78,7 +78,8 @@ input[type=submit] {
 
 
 #deleteButt {
-  float: right;
+  /*float: right;*/
+  display: inline-block;
   margin-left: 70px;
   background: #787878;
   border: 2px solid black;
@@ -86,5 +87,7 @@ input[type=submit] {
   color: #FFFFFF;
 }
 
-
+#delete {
+  display: inline-block;
+}
 
