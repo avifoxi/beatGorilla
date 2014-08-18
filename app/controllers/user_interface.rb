@@ -23,6 +23,8 @@ put '/ui/:id/save' do
       beat.save
     end
   end
+  p params
+  p active_beats
 
   # change active beats to true
   active_beats.flatten.each do |beat_id|
@@ -58,6 +60,8 @@ delete '/ui/:id/delete' do
   redirect '/error' unless @user
 
   sequence = Sequence.find(params[:id])
+  redirect '/error' unless @user.id == sequence.user_id
+
   sequence.destroy
 
   redirect "/users/#{@user.id}"
