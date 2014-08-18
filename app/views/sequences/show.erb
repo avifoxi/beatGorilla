@@ -35,6 +35,11 @@
   <button id="playButt">Play</button>
   <button id="stopButt">Stop</button>
 
+<form action='/ui/<%= @sequence.id %>/delete' method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <button id="deleteButt">Delete</button>
+</form>
+
 
 
 

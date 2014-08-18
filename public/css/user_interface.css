@@ -77,4 +77,14 @@ input[type=submit] {
 }
 
 
+#deleteButt {
+  float: right;
+  margin-left: 70px;
+  background: #787878;
+  border: 2px solid black;
+  font-family: courier, sans-serif;
+  color: #FFFFFF;
+}
+
+
 
