@@ -72,15 +72,14 @@ Controller.prototype = {
   sequencify : function( json ) {
     var _this = this;
     var sequence = new Sequence( JSON.parse(json) );
-    console.log(sequence);
+    // console.log(sequence);
     var sps = Object.getOwnPropertyNames(sequence.soundPatterns);
     for (var i = 0; i < sps.length; i++){
       
       sequence.soundPatterns[sps[i] ] = _this.soundify(sequence.soundPatterns[sps[i] ]);
 
-      // console.log(sps[i])
     }
-    // console.log(sequence);
+    _this.updateSequence(sequence);
   },
   soundify : function(sp) {
     var _this = this;
